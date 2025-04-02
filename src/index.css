@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* Changed from skyblue to white as base */
+    --foreground: 20 5% 8%;
+
+    --card: 32 100% 50%;
+    --card-foreground: 20 5% 8%;
+
+    --popover: 32 100% 50%;
+    --popover-foreground: 20 5% 8%;
+
+    --primary: 32 100% 50%;
+    --primary-foreground: 20 5% 8%;
+
+    --secondary: 48 100% 50%;
+    --secondary-foreground: 20 5% 8%;
+
+    --muted: 195 83% 55%;
+    --muted-foreground: 0 0% 100%;
+
+    --accent: 48 100% 50%;
+    --accent-foreground: 20 5% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 32 100% 45%;
+    --input: 0 0% 100%;
+    --ring: 32 100% 50%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground antialiased bg-honey-bg;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  .glass-card {
+    @apply bg-primary/95 backdrop-blur-sm border border-primary/80 shadow-lg;
+  }
+  
+  .content-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+  
+  .btn-primary {
+    @apply bg-secondary text-black font-bold py-2 px-6 rounded-full transition-all duration-300 hover:bg-secondary/90 hover:shadow-md hover:translate-y-[-2px];
+  }
+  
+  .input-field {
+    @apply bg-white rounded-md py-2 px-4 w-full focus:outline-none focus:ring-2 focus:ring-secondary/70 transition-all;
+  }
+  
+  .select-field {
+    @apply bg-white rounded-md py-2 px-4 w-full focus:outline-none focus:ring-2 focus:ring-secondary/70 transition-all appearance-none;
+  }
+  
+  /* Remove honey drip and replace with honey pattern background */
+  .bg-honey-pattern {
+    background-image: url("/honey-pattern.svg");
+    background-color: rgba(255, 214, 0, 0.1);
+  }
+}
